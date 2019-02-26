@@ -1,5 +1,5 @@
 pipeline{
-states{
+stages{
 stage('compile stage'){
 steps{
   withMaven('maven:Maven'){
