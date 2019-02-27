@@ -4,14 +4,14 @@ stages{
 stage('Build'){
 steps{
   withMaven(maven:'Maven'){
-  bat 'mvn clean compile'
+  bat label: '', script: 'mvn clean compile'
   }
 }
 }
 stage('test stage'){
 steps{
   withMaven(maven:'Maven'){
-  bat 'mvn test'
+  bat label: '', script: 'mvn test'
   }
 }
 }
