@@ -1,19 +1,22 @@
 pipeline {
     agent any 
+	tools {
+		maven 'maven3'
+	}
     stages {
         stage('Build') { 
             steps {
-                bat label: '', script: 'echo Build stage is done'
+                bat 'mvn clean compile'
             }
         }
         stage('Test') { 
             steps {
-                bat label: '', script: 'echo Test stage is done'
+                bat 'mvn test'
             }
         }
         stage('Deploy') { 
             steps {
-                bat label: '', script: 'echo Deploy stage is done'
+                bat 'mvn package'
             }
         }
     }
