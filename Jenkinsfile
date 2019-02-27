@@ -3,7 +3,7 @@ agent any
 stages{
 stage('Build'){
 steps{
-  bat label: '', script: 'mvn clean compile package'
+  bat label: '', script: 'mvn clean compile'
   }
 }
 }
