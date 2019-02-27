@@ -1,28 +1,20 @@
-pipeline{
-agent any
-tools{
-maven 'Maven'
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                bat label: '', script: 'echo Build stage is done'
+            }
+        }
+        stage('Test') { 
+            steps {
+                bat label: '', script: 'echo Test stage is done'
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                bat label: '', script: 'echo Deploy stage is done'
+            }
+        }
+    }
 }
-
-stages{
-stage('Build'){
-steps{
-  bat 'mvn clean compile'
-  }
-}
-
-stage('test stage'){
-steps{
-  bat 'mvn test'
-}
-}
-
-stage('Deploy stage'){
-steps{
-  bat 'mvn package'
-}
-}
-
-}
-}
-
