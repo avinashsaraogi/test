@@ -3,17 +3,14 @@ agent any
 stages{
 stage('Build'){
 steps{
-  withMaven(maven:'Maven'){
-  bat label: '', script: 'mvn clean compile'
+  bat label: '', script: 'mvn clean compile package'
   }
 }
 }
 stage('test stage'){
 steps{
-  withMaven(maven:'Maven'){
   bat label: '', script: 'mvn test'
-  }
 }
 }
 }
-}
+
